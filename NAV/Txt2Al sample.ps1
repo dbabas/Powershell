@@ -1,0 +1,2 @@
+﻿#.\finsql.exe command=exporttonewsyntax, file=C:\Users\dimitrios.bampas\Documents\BC\AL\r400.txt, servername=DOMOSNAVBC\SQLEXPRESS, database=GR_BC_D365_DEV, filter="Type=Report;ID=400"
+#.\Txt2Al.exe --source=C:\Users\dimitrios.bampas\Documents\BC\AL\r400.txt --target=C:\Users\dimitrios.bampas\Documents\BC\AL --rename --extensionStartId 50100
