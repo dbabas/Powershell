@@ -1,2 +1,2 @@
-﻿#.\finsql.exe command=exporttonewsyntax, file=C:\Users\dimitrios.bampas\Documents\BC\AL\r400.txt, servername=DOMOSNAVBC\SQLEXPRESS, database=GR_BC_D365_DEV, filter="Type=Report;ID=400"
-#.\Txt2Al.exe --source=C:\Users\dimitrios.bampas\Documents\BC\AL\r400.txt --target=C:\Users\dimitrios.bampas\Documents\BC\AL --rename --extensionStartId 50100
+﻿#finsql.exe command=exporttonewsyntax, file=<Destination file>, servername=<SQL Server instance>, database=<database name>, filter="Type=<Object Type>;ID=<Object Id>", username=, password=, ntauthentication=no,logfile=<Logfile path>
+#Txt2Al.exe --source=<Source path> --target=<Target path> --rename --extensionStartId 50100
