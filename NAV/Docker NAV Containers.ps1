@@ -33,6 +33,9 @@
 #Get-BCContainerNavVersion <ContainerName>
 #Get-BCContainers -includeLabels
 
+#Look here for Container files
+#C:\ProgramData\NavContainerHelper\Extensions
+
 
 #Other resources
 #https://blogs.msdn.microsoft.com/freddyk/
