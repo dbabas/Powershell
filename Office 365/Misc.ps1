@@ -1,12 +1,16 @@
 ﻿#Install the module to interact with Office 365
 #Filter with "AzureAD" to see the comdlets
-#Install-Module -Name AzureAD
+Install-Module -Name AzureAD
 
 Install-Module MSOnline
 
 #Connect to the tenant
 $credential = Get-Credential
-#Connect-AzureAD -Credential $credential
+Connect-AzureAD -Credential $credential
+Install-Module ExchangeOnlineManagement
+Connect-ExchangeOnline -Credential $UserCredential -ShowProgress $true
+
+
 
 
 #Delete a group without waiting 30 days
@@ -30,3 +34,13 @@ $credential = Get-Credential
 Connect-MsolService -Credential $credential
 Get-MsolUser -All | select DisplayName, LastPasswordChangeTimeStamp
 Get-MsolUser -All | select DisplayName, LastPasswordChangeTimeStamp | Export-CSV LastPasswordChange.csv -NoTypeInformation
+
+
+#Enable Dkim
+#https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/use-dkim-to-validate-outbound-email?view=o365-worldwide
+Install-Module ExchangeOnlineManagement
+Connect-ExchangeOnline -Credential $UserCredential -ShowProgress $true
+New-DkimSigningConfig -DomainName metalogistics.gr -Enabled $false
+Get-DkimSigningConfig -Identity metalogistics.gr | Format-List Selector1CNAME, Selector2CNAME
+#Add two CNAME records with the values created with the above commands and then run the following:
+Set-DkimSigningConfig -Identity metalogistics.gr -Enabled $true
